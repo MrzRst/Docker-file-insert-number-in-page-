@@ -1,0 +1,8 @@
+docker create --name my_data -v /usr/share/nginx/html/ ubuntu
+docker run -d --volume-from my_data nginx
+docker inspect 3c441a0effa7 | grep IP
+mkdir my_web
+cd my_web
+docker build -t my_web .
+docker build -t my_web .
+docker run -d --volumes-from my_data my_web
